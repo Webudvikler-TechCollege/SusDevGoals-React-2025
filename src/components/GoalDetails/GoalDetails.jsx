@@ -1,4 +1,3 @@
-import { GoalList } from "../GoalList/GoalList";
 import { GoalDetailsStyled } from "./GoalDetails.styled"
 import parse from "html-react-parser";
 

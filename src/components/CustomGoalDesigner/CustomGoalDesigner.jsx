@@ -1,10 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CustomGoalDesignerStyled } from "./CustomGoalDesigner.styled"
 
 
 export const CustomGoalDesigner = () => {
     const [text, setText] = useState("Din tekst")
     const [color, setColor] = useState("efefef")
+    const [error, setError] = useState('')
+
+    useEffect(() => {
+        if(!text) {
+            setError('Tekst må ikke være tom')
+        } else {
+            setError('')
+        }
+    }, [text])
 
     return (
         <CustomGoalDesignerStyled>
@@ -18,6 +27,7 @@ export const CustomGoalDesigner = () => {
                         id="goaltext"
                         onChange={(e) => setText(e.target.value)}
                     />
+                    {error && <span style={{ color: "red" }}>{error}</span>}
                 </p>
                 <p>
                     <label>Indtast farvekode: </label>
