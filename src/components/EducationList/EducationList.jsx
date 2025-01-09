@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { EducationListStyled } from "./EducationListstyled"
 
 export const EducationList = () => {
     const [apiData, setApiData] = useState([])
@@ -11,15 +12,18 @@ export const EducationList = () => {
 
     useEffect(() => {
         getData()
-    }, [])
+    },[])
     console.log(apiData);
+
 
 
     return (
         <ul>
             {apiData && apiData.map((value, index) => {
                 return (
-                    <li key={index}>{value.name}</li>
+                    <EducationListStyled key={index} color={value.color}>
+                        {value.name}
+                    </EducationListStyled>
                 )
             })}
         </ul>

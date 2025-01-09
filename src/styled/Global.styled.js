@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { Reset } from './Mixins'
+import { Reset } from '../assets/Mixins'
 
 export const GlobalStyle = createGlobalStyle`
     body {

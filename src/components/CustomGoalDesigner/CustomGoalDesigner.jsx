@@ -13,7 +13,7 @@ export const CustomGoalDesigner = () => {
         } else {
             setError('')
         }
-    }, [text])
+    }, [color])
 
     return (
         <CustomGoalDesignerStyled>
