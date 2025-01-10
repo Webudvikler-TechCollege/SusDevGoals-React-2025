@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { EducationListStyled } from "./EducationListstyled"
+import { EducationCard } from "../EducationCard/EducationCard"
+import { EducationListStyled } from "../EducationList/EducationList.styled"
 
 export const EducationList = () => {
     const [apiData, setApiData] = useState([])
@@ -15,17 +16,15 @@ export const EducationList = () => {
     },[])
     console.log(apiData);
 
-
-
     return (
-        <ul>
+        <EducationListStyled>
             {apiData && apiData.map((value, index) => {
                 return (
-                    <EducationListStyled key={index} color={value.color}>
+                    <EducationCard key={index} color={value.color}>
                         {value.name}
-                    </EducationListStyled>
+                    </EducationCard>
                 )
             })}
-        </ul>
+        </EducationListStyled>
     )
 }

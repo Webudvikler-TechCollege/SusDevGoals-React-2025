@@ -1,12 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
-import { Reset } from '../assets/Mixins'
+import { Reset } from './Mixins'
 
 export const GlobalStyle = createGlobalStyle`
     body {
         ${Reset};
-        background-color: #fff;
         font-family: 'Open Sans', Arial, Verdana;
         font-size: ${props => props.theme.fontsizes.m};
+    }
+
+    .dark-mode {
+        background-color: #333;
     }
 
     h1 {
